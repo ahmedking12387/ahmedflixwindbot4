@@ -161,6 +161,7 @@ client.user.setGame(args , '');
 
 
 client.on('message', message => {
+    var prefix = "++";
         if (message.author.id === client.user.id) return;
         if (message.guild) {
        let embed = new Discord.RichEmbed()
@@ -209,5 +210,30 @@ client.on('message', function(message) {
     }
 });
 
+
+
+
+
+Client.on("message", message => {
+    var prefix = "+";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix - "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+ if (!args[1]) {
+                                let embed3 = new Discord.RichEmbed()
+                                .setDescription(":white_check_mark: | تم ارسال للكل رساله فارغه")
+                                .setColor("#FF0000")
+                                message.channel.sendEmbed(embed3);
+                            } else {
+
+                            let embed4 = new Discord.RichEmbed()
+                                                            .setDescription(':white_check_mark: | تم ارسال للكل الرساله !')
+                                                            .setColor("#008000")
+                                message.channel.sendEmbed(embed4);
+                                                      message.delete();
+                            }
+                          }
+});
 
 client.login(process.env.BOT_TOKEN);
