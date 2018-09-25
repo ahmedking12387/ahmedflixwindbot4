@@ -214,7 +214,7 @@ client.on('message', function(message) {
 
 
 
-Client.on("message", message => {
+client.on("message", message => {
     var prefix = "+";
  
             var args = message.content.substring(prefix.length).split(" ");
@@ -235,5 +235,6 @@ Client.on("message", message => {
                             }
                           }
 });
+
 
 client.login(process.env.BOT_TOKEN);
